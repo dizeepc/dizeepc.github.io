@@ -4,348 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dizee PC - Empower Your Future</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .logo-main {
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            font-style: italic;
-        }
-
-        .logo-main .dizee {
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .logo-main .pc {
-            color: #ff0000;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .logo-tagline {
-            color: #4a9fd8;
-            font-size: 0.75rem;
-            font-style: italic;
-            margin-top: -5px;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #ff0000;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #ff0000 100%);
-            color: white;
-            padding: 5rem 2rem;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            font-style: italic;
-        }
-
-        .cta-button {
-            background: white;
-            color: #ff0000;
-            padding: 1.2rem 2.5rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-        }
-
-        .cta-button:hover {
-            background: #ff0000;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,0,0,0.3);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #1a1a1a;
-            font-weight: 900;
-        }
-
-        .section-title span {
-            color: #ff0000;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(255,0,0,0.2);
-            border-color: #ff0000;
-        }
-
-        .product-image {
-            width: 100%;
-            height: 250px;
-            background: #f5f5f5;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-image img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #ff0000;
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
-
-        .product-brand {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-
-        .product-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .product-price {
-            color: #ff0000;
-            font-size: 1.8rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-
-        .product-description {
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-
-        .add-to-cart {
-            background: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 0.9rem 1.5rem;
-            border-radius: 5px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: all 0.3s;
-            text-transform: uppercase;
-        }
-
-        .add-to-cart:hover {
-            background: #ff0000;
-            transform: translateY(-2px);
-        }
-
-        .features {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            padding: 3rem 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: #1a1a1a;
-        }
-
-        .newsletter {
-            background: linear-gradient(135deg, #1a1a1a 0%, #ff0000 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .newsletter h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 900;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            min-width: 250px;
-        }
-
-        .newsletter-button {
-            background: white;
-            color: #ff0000;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-
-        .newsletter-button:hover {
-            background: #1a1a1a;
-            color: white;
-        }
-
-        footer {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .cart-indicator {
-            background: #ff0000;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .cart-indicator:hover {
-            background: white;
-            color: #ff0000;
-        }
-    </style>
+     <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
@@ -411,9 +72,16 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">Gaming PC - Black Edition</div>
-                <div class="product-price">₱89,999</div>
+                <div class="product-price" id="price-1">₱89,999</div>
                 <div class="product-description">RTX 5090 • Intel i9 • 32GB RAM • RGB Cooling • Tempered Glass</div>
-                <button class="add-to-cart" onclick="addToCart('Gaming PC - Black Edition')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-1" onchange="updatePrice(1)">
+                    <option value="">Select Configuration</option>
+                    <option value="89999">RTX 5090 + i9 (32GB RAM) - ₱89,999</option>
+                    <option value="79999">RTX 5080 + i7 (32GB RAM) - ₱79,999</option>
+                    <option value="69999">RTX 5070 + i7 (16GB RAM) - ₱69,999</option>
+                    <option value="59999">RTX 5060 + i5 (16GB RAM) - ₱59,999</option>
+                </select>
+                <button class="add-to-cart" id="btn-1" onclick="addToCart('Gaming PC - Black Edition', 1)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -423,9 +91,16 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">Gaming PC - White Edition</div>
-                <div class="product-price">₱92,999</div>
+                <div class="product-price" id="price-2">₱92,999</div>
                 <div class="product-description">RTX 5090 • Intel i9 • 32GB RAM • RGB Cooling • Premium White Case</div>
-                <button class="add-to-cart" onclick="addToCart('Gaming PC - White Edition')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-2" onchange="updatePrice(2)">
+                    <option value="">Select Configuration</option>
+                    <option value="92999">RTX 5090 + i9 (32GB RAM) - ₱92,999</option>
+                    <option value="82999">RTX 5080 + i7 (32GB RAM) - ₱82,999</option>
+                    <option value="72999">RTX 5070 + i7 (16GB RAM) - ₱72,999</option>
+                    <option value="62999">RTX 5060 + i5 (16GB RAM) - ₱62,999</option>
+                </select>
+                <button class="add-to-cart" id="btn-2" onclick="addToCart('Gaming PC - White Edition', 2)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -434,9 +109,14 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">GS550 Ultra PSU</div>
-                <div class="product-price">₱4,299</div>
+                <div class="product-price" id="price-3">₱4,299</div>
                 <div class="product-description">550W • 80 Plus Bronze • RGB Fan • 3 Years Warranty • Ultra Series</div>
-                <button class="add-to-cart" onclick="addToCart('GS550 Ultra PSU')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-3" onchange="updatePrice(3)">
+                    <option value="">Select Warranty</option>
+                    <option value="4299">Standard (3 Years) - ₱4,299</option>
+                    <option value="5299">Extended (5 Years) - ₱5,299</option>
+                </select>
+                <button class="add-to-cart" id="btn-3" onclick="addToCart('GS550 Ultra PSU', 3)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -446,9 +126,14 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">GS650 Ultra RGB PSU</div>
-                <div class="product-price">₱5,499</div>
+                <div class="product-price" id="price-4">₱5,499</div>
                 <div class="product-description">650W • 80 Plus Gold • Full RGB Fan • 3 Years Warranty • Premium Series</div>
-                <button class="add-to-cart" onclick="addToCart('GS650 Ultra RGB PSU')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-4" onchange="updatePrice(4)">
+                    <option value="">Select Warranty</option>
+                    <option value="5499">Standard (3 Years) - ₱5,499</option>
+                    <option value="6499">Extended (5 Years) - ₱6,499</option>
+                </select>
+                <button class="add-to-cart" id="btn-4" onclick="addToCart('GS650 Ultra RGB PSU', 4)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -457,9 +142,14 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">GS550 White Edition PSU</div>
-                <div class="product-price">₱4,799</div>
+                <div class="product-price" id="price-5">₱4,799</div>
                 <div class="product-description">550W • 80 Plus Bronze • RGB Fan • White Edition • 3 Years Warranty</div>
-                <button class="add-to-cart" onclick="addToCart('GS550 White Edition PSU')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-5" onchange="updatePrice(5)">
+                    <option value="">Select Warranty</option>
+                    <option value="4799">Standard (3 Years) - ₱4,799</option>
+                    <option value="5799">Extended (5 Years) - ₱5,799</option>
+                </select>
+                <button class="add-to-cart" id="btn-5" onclick="addToCart('GS550 White Edition PSU', 5)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -468,9 +158,14 @@
                 </div>
                 <div class="product-brand">INPLAY</div>
                 <div class="product-name">GS650 White Edition PSU</div>
-                <div class="product-price">₱5,999</div>
+                <div class="product-price" id="price-6">₱5,999</div>
                 <div class="product-description">650W • 80 Plus Gold • RGB Fan • Premium White • 3 Years Warranty</div>
-                <button class="add-to-cart" onclick="addToCart('GS650 White Edition PSU')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-6" onchange="updatePrice(6)">
+                    <option value="">Select Warranty</option>
+                    <option value="5999">Standard (3 Years) - ₱5,999</option>
+                    <option value="6999">Extended (5 Years) - ₱6,999</option>
+                </select>
+                <button class="add-to-cart" id="btn-6" onclick="addToCart('GS650 White Edition PSU', 6)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -480,9 +175,15 @@
                 </div>
                 <div class="product-brand">NVISION</div>
                 <div class="product-name">24" Gaming Monitor</div>
-                <div class="product-price">₱8,999</div>
+                <div class="product-price" id="price-7">₱8,999</div>
                 <div class="product-description">240Hz • 1ms Response • FHD • IPS Panel • 99% sRGB • Adaptive Sync</div>
-                <button class="add-to-cart" onclick="addToCart('24 Gaming Monitor')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-7" onchange="updatePrice(7)">
+                    <option value="">Select Refresh Rate</option>
+                    <option value="8999">240Hz - ₱8,999</option>
+                    <option value="7499">165Hz - ₱7,499</option>
+                    <option value="5999">144Hz - ₱5,999</option>
+                </select>
+                <button class="add-to-cart" id="btn-7" onclick="addToCart('24 Gaming Monitor', 7)" disabled>Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -492,9 +193,14 @@
                 </div>
                 <div class="product-brand">NVISION</div>
                 <div class="product-name">27" Curved Gaming Monitor</div>
-                <div class="product-price">₱14,999</div>
+                <div class="product-price" id="price-8">₱14,999</div>
                 <div class="product-description">165Hz • 1ms • QHD • VA Panel • Curved Display • Premium Design</div>
-                <button class="add-to-cart" onclick="addToCart('27 Curved Gaming Monitor')">Add to Cart</button>
+                <select class="product-dropdown" id="variant-8" onchange="updatePrice(8)">
+                    <option value="">Select Resolution</option>
+                    <option value="14999">QHD (2560x1440) - ₱14,999</option>
+                    <option value="11999">FHD (1920x1080) - ₱11,999</option>
+                </select>
+                <button class="add-to-cart" id="btn-8" onclick="addToCart('27 Curved Gaming Monitor', 8)" disabled>Add to Cart</button>
             </div>
         </div>
     </section>
@@ -515,17 +221,36 @@
             </div>
             <div style="color: #4a9fd8; font-size: 0.8rem; font-style: italic;">Empower Your Future</div>
         </div>
-        <p>&copy; 2025 Dizee PC. All rights reserved.</p>
+        <p>&copy; 2024 Dizee PC. All rights reserved.</p>
         <p>Premium Gaming PCs & Components</p>
     </footer>
 
     <script>
         let cartCount = 0;
 
-        function addToCart(productName) {
-            cartCount++;
-            document.getElementById('cart-count').textContent = cartCount;
-            alert(productName + ' added to cart!');
+        function updatePrice(productId) {
+            const dropdown = document.getElementById('variant-' + productId);
+            const priceElement = document.getElementById('price-' + productId);
+            const button = document.getElementById('btn-' + productId);
+            const selectedPrice = dropdown.value;
+            
+            if (selectedPrice) {
+                priceElement.textContent = '₱' + parseInt(selectedPrice).toLocaleString();
+                button.disabled = false;
+            } else {
+                button.disabled = true;
+            }
+        }
+
+        function addToCart(productName, productId) {
+            const dropdown = document.getElementById('variant-' + productId);
+            const selectedOption = dropdown.options[dropdown.selectedIndex].text;
+            
+            if (dropdown.value) {
+                cartCount++;
+                document.getElementById('cart-count').textContent = cartCount;
+                alert(productName + ' - ' + selectedOption + ' added to cart!');
+            }
         }
 
         function subscribe(event) {
