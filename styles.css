@@ -361,4 +361,19 @@ footer {
     background: white;
     color: #ff0000;
 }
-   
+
+.contact {
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    font-size: 1.3rem;
+}
+
+.contact-fb {
+    color: #666;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+    font-size: 2.3rem;
+}
